@@ -93,9 +93,50 @@
   firebase.initializeApp(config);
 </script>
     
+    <div>Datos de usuario{{user.email}}</div>
+    
+    <button type="button" class="btn btn-xs btn-danger" ng-click="registerUserEmail('osjobu@gmail.com','qwaszx..')">Register User(Email)</button>
+    <button type="button" class="btn btn-xs btn-danger" ng-click="loginEmail('osjobu@gmail.com','qwaszx..')">Login User(Email)</button>
+    
+    <button type="button" class="btn btn-xs btn-danger" ng-click="getcurrenUser()">Get current user</button>
+    <button type="button" class="btn btn-xs btn-danger" ng-click="signOut()">SignOut</button>
+    
+    
+    <button type="button" class="btn btn-xs btn-danger" ng-click="addQuatation('Cotización 1')">Add Quatation</button>
+    
     
 
-	<div ng-repeat="quatation in quatations">
+    
+    <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Activitie name</th>
+                
+                
+                <!--  <th>por hora({{pertTotal}} | {{raiz}} )</th>--> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="quatation in user.quatationData">
+                <td>{{ $index+1 }}</td>
+                <td><div class="input-group"><input type="text" class="form-control" aria-describedby="basic-addon1" ng-change="changeModel()" placeholder="Ingresa el titulo de la cotización" ng-model='quatation.title' value='{{ quatation.title }}'></div></td>
+                <td><button type="button" class="btn btn-xs btn-danger" ng-click="addStage(quatation)">Add stage</button><div class="input-group"><input type="text" class="form-control" aria-describedby="basic-addon1" ng-change="changeModel()" placeholder="Description" ng-model='quatation.description' value='{{ quatation.description }}'></div></td>
+                
+                
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn btn-lg btn-default" ng-click="addTask()">Add activity</button>
+        </div>
+      </div>
+    
+    
+    
+   
+	<!-- <div ng-repeat="quatation in quatations">
 	<br><br>
 	 <input type="text" class="form-control" placeholder="Name stage" aria-describedby="basic-addon1" value=' {{quatation.name}}' ng-change="changeModel()" ng-model='quatation.name'>
 	 <input type="text" class="form-control" placeholder="Description" aria-describedby="basic-addon1" value=' {{quatation.description}}' ng-change="changeModel()" ng-model='quatation.description'>
@@ -116,7 +157,7 @@
 		</div>
 	
 	
-	</div>
+	</div> -->
 	
 	
  
