@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
   	<script src="lib/angular.min.js"></script>
+  	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+	
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,7 +80,21 @@
 
 </script>
 
-	
+
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCNzaBX7mD-0aRlUXkvplo40sEeybmnFcE",
+    authDomain: "projectprice-d71fc.firebaseapp.com",
+    databaseURL: "https://projectprice-d71fc.firebaseio.com",
+    storageBucket: "projectprice-d71fc.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    
+
 	<div ng-repeat="quatation in quatations">
 	<br><br>
 	 <input type="text" class="form-control" placeholder="Name stage" aria-describedby="basic-addon1" value=' {{quatation.name}}' ng-change="changeModel()" ng-model='quatation.name'>
@@ -107,7 +126,8 @@
     <script src="js/ProjectPriceCtrl.js"></script>
     
     <script src="js/bootstrap.min.js"></script>
-
+	
+	
 
 </body>
 </html>
